@@ -119,8 +119,62 @@ L.control.scale({
 
 var scrollMagicController = new ScrollMagic.Controller();
 
+var city = document.querySelector('#Stad');
+var undrground = document.querySelector('#Ondergrond');
+var pipes = document.querySelector('#Buizen');
+var facts = document.querySelector('#Feiten');
+var facts2 = document.querySelector('#Feit2');
+var facts3 = document.querySelector('#Feit3');
+var facts4 = document.querySelector('#Feit4');
+var clouds = document.querySelector('#Wolken');
+var bike = document.querySelector('#Fiets');
+var block = document.querySelector('#Blok');
 
+var hide = new TimelineMax();
 
+hide
+.set(city, {y: -600})
+.set([undrground, pipes], {y:-2400})
+.set([facts, facts2, facts3, facts4], {scale: 0})
+.set([clouds, bike], {x: -1200})
+.set(block, {y: -1200, rotation: -45});
+
+var tlCity = new TimelineMax();
+
+tlCity
+.to([city, undrground], 1, {y:0, ease: Elastic.easeInOut});
+
+var tlClouds = new TimelineMax({repeat: -1});
+
+tlClouds
+.to(clouds, 20, {x: 1200});
+
+var tlBike = new TimelineMax();
+
+tlBike
+.to(bike, 10, {x: 0, ease: Power4.easeOut}, '+=1');
+
+var tlBlock = new TimelineMax();
+
+tlBlock
+.to(block, 1.5, {y:0, rotation: 0, ease: Elastic.easeInOut}, "+=3")
+
+var tlPipes = new TimelineMax();
+
+tlPipes
+.to(pipes, 1, {y: 0}, "+=6");
+
+var tlFacts = new TimelineMax();
+
+tlFacts
+.to(facts, 0.2, {scale: 1.5}, "+=9.2")
+.to(facts, 0.2, {scale: 1})
+.to(facts2, 0.2, {scale: 1.5}, "+=2")
+.to(facts2, 0.2, {scale: 1})
+.to(facts3, 0.2, {scale: 1.5}, "+=2")
+.to(facts3, 0.2, {scale: 1})
+.to(facts4, 0.2, {scale: 1.5}, "+=2")
+.to(facts4, 0.2, {scale: 1})
 
   var scene = new ScrollMagic.Scene({
     triggerElement: '#anim',
