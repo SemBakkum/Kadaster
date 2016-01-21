@@ -117,7 +117,7 @@ L.control.scale({
 
 //--------Greensock--------
 
-var scrollMagicController = new ScrollMagic.Controller();
+var controller = new ScrollMagic.Controller();
 
 var city = document.querySelector('#Stad');
 var undrground = document.querySelector('#Ondergrond');
@@ -176,15 +176,6 @@ tlFacts
 .to(facts4, 0.2, {scale: 1.5}, "+=2")
 .to(facts4, 0.2, {scale: 1})
 
-  var scene = new ScrollMagic.Scene({
-    triggerElement: '#anim',
-    offset: 200 /* offset the trigger 150px below #scene's top */
-  })
-  .setTween({tlwind, tlfiets, tlmstad})
-  .addTo(scrollMagicController);
-  
-  // Add debug indicators fixed on right side
-   scene.addIndicators();
 
 
 
