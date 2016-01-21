@@ -117,7 +117,7 @@ L.control.scale({
 
 //--------Greensock--------
 
-var controller = new ScrollMagic.Controller();
+
 
 var city = document.querySelector('#Stad');
 var undrground = document.querySelector('#Ondergrond');
@@ -138,6 +138,8 @@ hide
 .set([facts, facts2, facts3, facts4], {scale: 0})
 .set([clouds, bike], {x: -1200})
 .set(block, {y: -1200, rotation: -45});
+
+function runGreenSock() {
 
 var tlCity = new TimelineMax();
 
@@ -175,6 +177,11 @@ tlFacts
 .to(facts3, 0.2, {scale: 1})
 .to(facts4, 0.2, {scale: 1.5}, "+=2")
 .to(facts4, 0.2, {scale: 1})
+
+}
+
+setTimeout(runGreenSock, 5000);
+
 
 
 
