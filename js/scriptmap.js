@@ -117,68 +117,54 @@ L.control.scale({
 
 //--------Greensock--------
 
-
-
-var city = document.querySelector('#Stad');
-var undrground = document.querySelector('#Ondergrond');
-var pipes = document.querySelector('#Buizen');
-var facts = document.querySelector('#Feiten');
-var facts2 = document.querySelector('#Feit2');
-var facts3 = document.querySelector('#Feit3');
-var facts4 = document.querySelector('#Feit4');
-var clouds = document.querySelector('#Wolken');
-var bike = document.querySelector('#Fiets');
-var block = document.querySelector('#Blok');
-
-var hide = new TimelineMax();
-
-hide
-.set(city, {y: -600})
-.set([undrground, pipes], {y:-2400})
-.set([facts, facts2, facts3, facts4], {scale: 0})
-.set([clouds, bike], {x: -1200})
-.set(block, {y: -1200, rotation: -45});
-
 function runGreenSock() {
 
-var tlCity = new TimelineMax();
+var aarde =  document.querySelector("#aarde");
+var bollie =  document.querySelector("#bollie");
+var TV =  document.querySelector("#TV");
+var hendel =  document.querySelector("#hendel");
+var graafauto =  document.querySelector("#graafauto");
+var storing =  document.querySelector("#storing");
+var moneybag =  document.querySelector("#moneybag");
+var wereldboltekst=  document.querySelector("#wereldboltekst");
+var tvtekst =  document.querySelector("#tvtekst");
+var graaftekst =  document.querySelector("#graaftekst");
+var moneytekst =  document.querySelector("#moneytekst");
+var alles =  document.querySelector("#Laag_1");
 
-tlCity
-.to([city, undrground], 1, {y:0, ease: Elastic.easeInOut});
 
-var tlClouds = new TimelineMax({repeat: -1});
+teksten = new TimelineMax({repeat:4});
+deAarde = new TimelineMax({repeat:-1});
+moneyBag = new TimelineMax({repeat:-1});
+GraafMach = new TimelineMax({repeat:-1});
+tvError = new TimelineMax({repeat:-1});
 
-tlClouds
-.to(clouds, 20, {x: 1200});
+deAarde
+.set(bollie, {opacity:0})
+.to(aarde, 150, {rotation:1300, transformOrigin: 'center'})
 
-var tlBike = new TimelineMax();
+moneyBag
+.to(moneybag, 2, {skewX:5,yoyo:true, repeat:2})
 
-tlBike
-.to(bike, 10, {x: 0, ease: Power4.easeOut}, '+=1');
+GraafMach
+.to(hendel,3, {rotation:-4, transformOrigin: '200',ease:Sine.easeInout,yoyo:true, repeat:1})
+.to([hendel,graafauto], 2, {x:-60,yoyo:true, repeat:1});
 
-var tlBlock = new TimelineMax();
+tvError
+.to(storing, 0.1,{opacity:0.65});
 
-tlBlock
-.to(block, 1.5, {y:0, rotation: 0, ease: Elastic.easeInOut}, "+=3")
+teksten
+.to(wereldboltekst, 0.2, {scale:1.2})
+.to(wereldboltekst,0.2, {scale:1})
+.to(tvtekst, 0.2, {scale:1.2},'+=2')
+.to(tvtekst,0.2, {scale:1})
+.to(graaftekst, 0.2, {scale:1.2},'+=2')
+.to(graaftekst,0.2, {scale:1})
+.to(moneytekst, 0.2, {scale:1.2},'+=2')
+.to(moneytekst,0.2, {scale:1})
+};
 
-var tlPipes = new TimelineMax();
 
-tlPipes
-.to(pipes, 1, {y: 0}, "+=6");
-
-var tlFacts = new TimelineMax();
-
-tlFacts
-.to(facts, 0.2, {scale: 1.5}, "+=9.2")
-.to(facts, 0.2, {scale: 1})
-.to(facts2, 0.2, {scale: 1.5}, "+=2")
-.to(facts2, 0.2, {scale: 1})
-.to(facts3, 0.2, {scale: 1.5}, "+=2")
-.to(facts3, 0.2, {scale: 1})
-.to(facts4, 0.2, {scale: 1.5}, "+=2")
-.to(facts4, 0.2, {scale: 1})
-
-}
 
 setTimeout(runGreenSock, 5000);
 
