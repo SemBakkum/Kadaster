@@ -117,7 +117,46 @@ L.control.scale({
 
 //--------Greensock--------
 
-function runGreenSock() {
+//function runGreenSock() {
+
+var tekst1 = document.querySelector("#tekst1");
+var wolken = document.querySelector("#wolken");
+var tekst2= document.querySelector("#tekst2");
+var fiets =  document.querySelector("#fiets");
+var Alles =  document.querySelector("#Laag_1");
+
+var start = new TimelineMax();
+var tlClouds = new TimelineMax({repeat: -1});
+
+start
+.from(fiets, 3.5, {x:-1500,ease: Power4.easeOut})
+.from(tekst1, 1, {x:-600})
+.from(tekst2, 1, {x:600},'+=2');
+
+tlClouds
+.to(wolken, 20, {x: 1200});
+
+var alles = document.querySelector("#alles");
+var navigatie = document.querySelector("#navigatie");
+var eerste= document.querySelector("#eerste");
+var tweede =  document.querySelector("#tweede");
+var derde =  document.querySelector("#derde");
+var vierde =  document.querySelector("#vierde");
+var vijfde =  document.querySelector("#vijfde");
+
+var animatie = new TimelineMax();
+
+animatie
+.from(eerste, 3,{x:-900})
+.to(eerste,2,{scale:1.1})
+.from(tweede,3,{x:900})
+.to(tweede,2,{scale:1.1})
+.from(derde, 3,{x:-900})
+.to(derde,2,{scale:1.1})
+.from(vierde,3,{x:900})
+.to(vierde,2,{scale:1.1})
+.from(vijfde, 3,{x:-900})
+.to(vijfde,2,{scale:1.1})
 
 var aarde =  document.querySelector("#aarde");
 var bollie =  document.querySelector("#bollie");
@@ -131,7 +170,6 @@ var tvtekst =  document.querySelector("#tvtekst");
 var graaftekst =  document.querySelector("#graaftekst");
 var moneytekst =  document.querySelector("#moneytekst");
 var alles =  document.querySelector("#Laag_1");
-
 
 teksten = new TimelineMax({repeat:4});
 deAarde = new TimelineMax({repeat:-1});
@@ -162,11 +200,11 @@ teksten
 .to(graaftekst,0.2, {scale:1})
 .to(moneytekst, 0.2, {scale:1.2},'+=2')
 .to(moneytekst,0.2, {scale:1})
-};
+//};
 
 
 
-setTimeout(runGreenSock, 5000);
+//setTimeout(runGreenSock, 5000);
 
 
 
