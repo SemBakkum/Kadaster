@@ -123,7 +123,26 @@ var tekst1 = document.querySelector("#tekst1");
 var wolken = document.querySelector("#wolken");
 var tekst2= document.querySelector("#tekst2");
 var fiets =  document.querySelector("#fiets");
-var Alles =  document.querySelector("#Laag_1");
+var Layer1 =  document.querySelector("#Laag_1");
+var alles = document.querySelector("#alles");
+var navigatie = document.querySelector("#navigatie");
+var eerste= document.querySelector("#eerste");
+var tweede =  document.querySelector("#tweede");
+var derde =  document.querySelector("#derde");
+var vierde =  document.querySelector("#vierde");
+var vijfde =  document.querySelector("#vijfde");
+var aarde =  document.querySelector("#aarde");
+var bollie =  document.querySelector("#bollie");
+var TV =  document.querySelector("#TV");
+var hendel =  document.querySelector("#hendel");
+var graafauto =  document.querySelector("#graafauto");
+var storing =  document.querySelector("#storing");
+var moneybag =  document.querySelector("#moneybag");
+var wereldboltekst=  document.querySelector("#wereldboltekst");
+var tvtekst =  document.querySelector("#tvtekst");
+var graaftekst =  document.querySelector("#graaftekst");
+var moneytekst =  document.querySelector("#moneytekst");
+var Layer2 =  document.querySelector("#Laag_1");
 
 var start = new TimelineMax();
 var tlClouds = new TimelineMax({repeat: -1});
@@ -135,14 +154,6 @@ start
 
 tlClouds
 .to(wolken, 20, {x: 1200});
-
-var alles = document.querySelector("#alles");
-var navigatie = document.querySelector("#navigatie");
-var eerste= document.querySelector("#eerste");
-var tweede =  document.querySelector("#tweede");
-var derde =  document.querySelector("#derde");
-var vierde =  document.querySelector("#vierde");
-var vijfde =  document.querySelector("#vijfde");
 
 var animatie = new TimelineMax();
 
@@ -158,24 +169,11 @@ animatie
 .from(vijfde, 3,{x:-900})
 .to(vijfde,2,{scale:1.1})
 
-var aarde =  document.querySelector("#aarde");
-var bollie =  document.querySelector("#bollie");
-var TV =  document.querySelector("#TV");
-var hendel =  document.querySelector("#hendel");
-var graafauto =  document.querySelector("#graafauto");
-var storing =  document.querySelector("#storing");
-var moneybag =  document.querySelector("#moneybag");
-var wereldboltekst=  document.querySelector("#wereldboltekst");
-var tvtekst =  document.querySelector("#tvtekst");
-var graaftekst =  document.querySelector("#graaftekst");
-var moneytekst =  document.querySelector("#moneytekst");
-var alles =  document.querySelector("#Laag_1");
-
-teksten = new TimelineMax({repeat:4});
-deAarde = new TimelineMax({repeat:-1});
-moneyBag = new TimelineMax({repeat:-1});
-GraafMach = new TimelineMax({repeat:-1});
-tvError = new TimelineMax({repeat:-1});
+var teksten = new TimelineMax({repeat:4});
+var deAarde = new TimelineMax({repeat:-1});
+var moneyBag = new TimelineMax({repeat:-1});
+var graafMach = new TimelineMax({repeat:-1});
+var tvError = new TimelineMax({repeat:-1});
 
 deAarde
 .set(bollie, {opacity:0})
@@ -184,7 +182,7 @@ deAarde
 moneyBag
 .to(moneybag, 2, {skewX:5,yoyo:true, repeat:2})
 
-GraafMach
+graafMach
 .to(hendel,3, {rotation:-4, transformOrigin: '200',ease:Sine.easeInout,yoyo:true, repeat:1})
 .to([hendel,graafauto], 2, {x:-60,yoyo:true, repeat:1});
 
